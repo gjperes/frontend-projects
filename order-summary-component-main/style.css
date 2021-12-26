@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800&display=swap");
+html {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+body {
+  background-image: url(./images/pattern-background-desktop.svg);
+}
+
+/*# sourceMappingURL=style.css.map */
