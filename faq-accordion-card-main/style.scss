@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+/*Primary Text Colors*/
+$dark-blue-desaturated: hsl(238, 29%, 16%);
+$soft-red: hsl(14, 88%, 65%);
+
+/*Primary Gradient Colors*/
+$soft-violet: hsl(273, 75%, 66%);
+$soft-blue: hsl(240, 73%, 65%);
+
+/*Neutral Text Colors*/
+$very-dark-blue-grayish: hsl(237, 12%, 33%);
+$dark-blue-grayish: hsl(240, 6%, 50%);
+
+/*Neutral Dividers*/
+$light-blue-grayish: hsl(240, 5%, 91%);
+
+html {
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  background: linear-gradient($soft-violet, $soft-blue);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: 5;
+  grid-template-rows: 1;
+}
+
+.col-1 {
+  grid-column: span(1, 4);
+}
+
+.col-2 {
+  grid-column: 5;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+// .hidden {
+//   display: none;
+//   visibility: collapse;
+// }
+
+.card {
+  background-color: white;
+  border-radius: 2rem;
+  margin: 10vh auto;
+}
+
+@media screen and (max-width: 375px) {
+  // Mobile
+  .card {
+    max-width: calc(375px - 2rem);
+    padding: 12rem 2rem 4rem 2rem;
+    margin: 20% 5% 4rem 5%;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  // Desktop
+  .card {
+    max-width: calc(375px * 3);
+    padding: 4rem 6rem 4rem 48rem;
+
+    ul {
+      margin-right: 4rem;
+      max-width: calc(375px * 1.2);
+    }
+  }
+}
