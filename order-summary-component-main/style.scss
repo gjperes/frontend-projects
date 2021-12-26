@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800&display=swap");
 
-// Variáveis
+// Variáveis de cor
 $pale-blue: hsl(225, 100%, 94%);
 $bright-blue: hsl(245, 75%, 52%);
 $very-pale-blue: hsl(225, 100%, 98%);
@@ -10,79 +10,72 @@ $dark-blue: hsl(223, 47%, 23%);
 html {
   font-family: "Red Hat Display", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+}
+
+body {
+  background-color: $pale-blue;
 }
 
 .container {
   background-image: url(./images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  height: 98vh;
+  display: flex;
+  justify-self: center;
+  align-items: center;
 }
 
 .card {
   background-color: $very-pale-blue;
   text-align: center;
-  box-shadow: 2px 2px 2px 1px $pale-blue;
-  box-shadow: 0px -1px 1px 1px $pale-blue;
-}
+  margin: 4rem auto;
+  border-radius: 1.2rem;
+  box-shadow: rgba(50, 50, 93, 0.2) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.2) 0px 18px 36px -18px;
 
-h2,
-h3 {
-  color: $dark-blue;
-}
-
-h2 {
-  font-weight: 800;
-}
-
-p {
-  color: $desaturated-blue;
-  font-weight: 500;
-}
-
-#desc {
-  margin: auto 3rem;
-  line-height: 1.4rem;
-}
-
-button {
-  border: none;
-}
-
-#payment-btn {
-  background-color: $bright-blue;
-  padding: 1rem 4.5rem;
-  font-weight: 700;
-  border-radius: 0.8rem;
-  margin-top: 1rem;
-  color: $very-pale-blue;
-  box-shadow: 0 6px 6px 0 hsl(224, 23%, 75%);
-}
-
-#cancel {
-  margin: 1rem auto;
-  color: $desaturated-blue;
-  font-weight: 700;
-}
-
-footer {
-  bottom: 0;
-}
-
-// Mobile
-@media only screen and (max-width: 375px) {
-  .card {
-    margin: 2rem 1rem;
+  img {
+    border-top-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
   }
 
-  .card img {
-    width: 343px; /*375px - 2*16px*/
+  h2,
+  h3 {
+    color: $dark-blue;
+  }
+
+  h2 {
+    font-weight: 800;
+  }
+
+  p {
+    color: $desaturated-blue;
+    font-weight: 500;
+  }
+
+  #desc {
+    margin: auto 3rem;
+    line-height: 1.4rem;
   }
 
   #plan-icon {
     width: 48px;
     height: 48px;
   }
+}
 
-  #payment-btn {
+button {
+  border: none;
+  cursor: pointer;
+
+  &#payment-btn {
+    background-color: $bright-blue;
+    padding: 1rem 4.5rem;
+    font-weight: 700;
+    border-radius: 0.8rem;
+    margin-top: 1rem;
+    color: $very-pale-blue;
+    box-shadow: 0 6px 6px 0 hsl(224, 23%, 75%);
+    // Efeitos:
     background-position: center;
     transition: background 0.5s;
     &:hover {
@@ -96,8 +89,44 @@ footer {
       transition: background 0s;
     }
   }
+
+  &#cancel {
+    font-weight: 700;
+    margin: 2rem auto;
+    margin-bottom: 3rem;
+    color: $desaturated-blue;
+    background: none;
+
+    &:hover {
+      color: hsl(224, 23%, 65%);
+      transition: color 0.2s;
+    }
+    &:active {
+      color: hsl(224, 23%, 35%);
+      transition: color 0.2s;
+    }
+  }
+}
+
+footer {
+  bottom: 0;
+}
+
+// Mobile
+@media only screen and (max-width: 375px) {
+  .card {
+    width: 343px; /*375px - 2*16px*/
+    margin: 2rem 1rem;
+
+    img {
+      width: 343px; /*375px - 2*16px*/
+    }
+  }
 }
 
 // Desktop
 @media only screen and (max-width: 1440px) {
+  .card {
+    width: 450px;
+  }
 }
