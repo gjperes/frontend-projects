@@ -5,8 +5,87 @@ html {
   font-weight: 500;
 }
 
-body {
+.container {
   background-image: url(./images/pattern-background-desktop.svg);
+}
+
+.card {
+  background-color: #f5f7ff;
+  text-align: center;
+  box-shadow: 2px 2px 2px 1px #e0e8ff;
+  box-shadow: 0px -1px 1px 1px #e0e8ff;
+}
+
+h2,
+h3 {
+  color: #1f2f56;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+p {
+  color: #7280a7;
+  font-weight: 500;
+}
+
+#desc {
+  margin: auto 3rem;
+  line-height: 1.4rem;
+}
+
+button {
+  border: none;
+}
+
+#payment-btn {
+  background-color: #3829e0;
+  padding: 1rem 4.5rem;
+  font-weight: 700;
+  border-radius: 0.8rem;
+  margin-top: 1rem;
+  color: #f5f7ff;
+  box-shadow: 0 6px 6px 0 #b1b8ce;
+}
+
+#cancel {
+  margin: 1rem auto;
+  color: #7280a7;
+  font-weight: 700;
+}
+
+footer {
+  bottom: 0;
+}
+
+@media only screen and (max-width: 375px) {
+  .card {
+    margin: 2rem 1rem;
+  }
+
+  .card img {
+    width: 343px;
+    /*375px - 2*16px*/
+  }
+
+  #plan-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  #payment-btn {
+    background-position: center;
+    transition: background 0.5s;
+  }
+  #payment-btn:hover {
+    background: #6255e7 radial-gradient(circle, transparent 1%, #6255e7 1%) center/15000%;
+  }
+  #payment-btn:active {
+    background-color: #6e63e9;
+    background-size: 100%;
+    transition: background 0s;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

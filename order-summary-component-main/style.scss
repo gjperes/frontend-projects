@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800&display=swap");
 
+// Variáveis
 $pale-blue: hsl(225, 100%, 94%);
 $bright-blue: hsl(245, 75%, 52%);
 $very-pale-blue: hsl(225, 100%, 98%);
@@ -12,6 +13,91 @@ html {
   font-weight: 500;
 }
 
-body {
+.container {
   background-image: url(./images/pattern-background-desktop.svg);
+}
+
+.card {
+  background-color: $very-pale-blue;
+  text-align: center;
+  box-shadow: 2px 2px 2px 1px $pale-blue;
+  box-shadow: 0px -1px 1px 1px $pale-blue;
+}
+
+h2,
+h3 {
+  color: $dark-blue;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+p {
+  color: $desaturated-blue;
+  font-weight: 500;
+}
+
+#desc {
+  margin: auto 3rem;
+  line-height: 1.4rem;
+}
+
+button {
+  border: none;
+}
+
+#payment-btn {
+  background-color: $bright-blue;
+  padding: 1rem 4.5rem;
+  font-weight: 700;
+  border-radius: 0.8rem;
+  margin-top: 1rem;
+  color: $very-pale-blue;
+  box-shadow: 0 6px 6px 0 hsl(224, 23%, 75%);
+}
+
+#cancel {
+  margin: 1rem auto;
+  color: $desaturated-blue;
+  font-weight: 700;
+}
+
+footer {
+  bottom: 0;
+}
+
+// Mobile
+@media only screen and (max-width: 375px) {
+  .card {
+    margin: 2rem 1rem;
+  }
+
+  .card img {
+    width: 343px; /*375px - 2*16px*/
+  }
+
+  #plan-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  #payment-btn {
+    background-position: center;
+    transition: background 0.5s;
+    &:hover {
+      background: hsl(245, 75%, 62%)
+        radial-gradient(circle, transparent 1%, hsl(245, 75%, 62%) 1%)
+        center/15000%;
+    }
+    &:active {
+      background-color: hsl(245, 75%, 65%);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+}
+
+// Desktop
+@media only screen and (max-width: 1440px) {
 }
