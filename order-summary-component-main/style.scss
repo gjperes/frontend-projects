@@ -25,7 +25,7 @@ body {
 }
 
 .card {
-  background-color: $very-pale-blue;
+  background-color: white;
   text-align: center;
 
   border-radius: 1.2rem;
@@ -58,7 +58,7 @@ body {
   }
 
   .pricing {
-    background-color: hsl(225, 100%, 96%);
+    background-color: $very-pale-blue;
     border-radius: 0.7rem;
     width: 80%;
     margin: 1.2rem 10%;

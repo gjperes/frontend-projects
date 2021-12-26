@@ -17,9 +17,8 @@ body {
 }
 
 .card {
-  background-color: #f5f7ff;
+  background-color: white;
   text-align: center;
-  margin: 4rem auto;
   border-radius: 1.2rem;
   box-shadow: rgba(50, 50, 93, 0.2) 0px 30px 60px -12px, rgba(0, 0, 0, 0.2) 0px 18px 36px -18px;
 }
@@ -43,7 +42,7 @@ body {
   line-height: 1.4rem;
 }
 .card .pricing {
-  background-color: #ebf0ff;
+  background-color: #f5f7ff;
   border-radius: 0.7rem;
   width: 80%;
   margin: 1.2rem 10%;
@@ -149,8 +148,9 @@ footer {
     margin-right: 1rem;
   }
 }
-@media only screen and (max-width: 1440px) {
+@media screen and (max-width: 1440px) {
   .card {
+    margin: 4rem auto;
     width: 450px;
   }
 }
