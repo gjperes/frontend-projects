@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Keeper | Ping Pong</title>
+</head>
+<body>
+    <h1>Ping Pong Game | Pontuação</h1>
+
+    <div class="score">
+        <h2><span id="player01">0</span> à <span id="player02">0</span></h2>
+    </div>
+
+    <p>Use os botões abaixo para atualizar o placar</p>
+
+    <label for="maxpoints">Pontuação máxima</label>
+    <select name="maxpoints" id="maxpoints">
+        <option selected value="5">5</option>
+        <option value="7">7</option>
+        <option value="10">10</option>
+    </select>
+
+    <div>
+        <button id="score-p01">Jogador A + 1</button>
+        <button id="score-p02">Jogador B + 1</button>
+        <button id="restart">Reiniciar</button>
+    </div>
+</body>
+</html>
