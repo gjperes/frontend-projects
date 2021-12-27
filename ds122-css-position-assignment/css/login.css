@@ -1,0 +1,71 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-color: gray;
+    background-image: -webkit-linear-gradient(top left, #a802e0, #f7676a);
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.container form {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+}
+.info {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.info .emoji-icon {
+    margin: 0;
+    font-size: 5em;
+    border: solid 1px black;
+    border-radius: 25px;
+    background-color: darkslategray;
+    line-height: 1.25;
+}
+form input {
+    display: block;
+    margin-bottom: 10px;
+    width: 300px;
+}
+.caixa-input {
+    border: solid transparent 2px;
+    border-bottom: #a802e0 solid 2px;
+    border-radius: 5px;
+    padding: 3px;
+}
+#username-input:focus, #pass-input:focus, #username-input:hover, #pass-input:hover {
+    outline-color: transparent;
+    border: solid #a802e0 2px;
+    border-radius: 5px;
+}
+#username-input:hover, #pass-input:hover{
+    transition: linear 1s;
+}
+.seguir-logado{
+    cursor: pointer;
+    user-select: none;
+}
+.seguir-logado input {
+    width: 20px;
+    display: inline;
+}
+#submit-button {
+    margin-top: 10px;
+    text-align: center;
+}
+button {
+    background-color: lightgray;
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+button:hover {
+    background-color: gray;
+    color: white;
+}
