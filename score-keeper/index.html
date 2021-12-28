@@ -5,37 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Score Keeper | Ping Pong</title>
 
-    <style>
-        .green {
-            color: green;
-        }
-        .red {
-            color: red;
-        }
-    </style>
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> 
 </head>
 <body>
-
-    <h1>Ping Pong Game | Pontuação</h1>
-
-    <div class="score">
-        <h2><span id="p1Display">0</span> à <span id="p2Display">0</span></h2>
-    </div>
-
-    <p>Use os botões abaixo para atualizar o placar</p>
-
-    <label for="maxPontos">Pontuação máxima</label>
-    <select name="maxPontos" id="maxPontos">
-        <option selected value="5">5</option>
-        <option value="7">7</option>
-        <option value="10">10</option>
-    </select>
-
-    <div>
-        <button id="p1Btn">Jogador A + 1</button>
-        <button id="p2Btn">Jogador B + 1</button>
-        <button id="restart">Reiniciar</button>
-    </div>
+    <section class="section">
+        <div class="container is-flex is-justify-content-center is-align-items-center">
+            <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title">
+                    Ping Pong Game | Pontuação
+                  </p>
+                  <button class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </header>
+                <div class="card-content has-text-centered">
+                    <div class="content">
+                        <p>Jogador A x Jogador B</p>
+                    </div>
+                  <div class="content">
+                    <h1 class="is-size-1">
+                        <span id="p1Display">0</span> à <span id="p2Display">0</span>
+                    </h1>
+                  </div>
+                  <div class="content">
+                    <p>Use os botões abaixo para atualizar o placar</p>
+                  </div>
+                  <label for="maxPontos" class="label is-inline">Selecione a pontuação máxima</label>
+                  <div class="select is-rounded">
+                    <select name="" id="maxPontos">
+                        <option selected value="5">Até 5</option>
+                        <option value="7">Até 7</option>
+                        <option value="10">Até 10</option>
+                    </select>
+                  </div>
+                </div>
+                <footer class="card-footer">
+                    <button id="p1Btn" class="button card-footer-item is-primary">Ponto do Jogador A</button>
+                    <button id="p2Btn" class="button card-footer-item is-info">Ponto do Jogador B</button>
+                    <button id="restart" class="button card-footer-item is-danger">Reiniciar</button>
+                </footer>
+              </div>
+        </div>
+    </section>
 
     <script src="app.js"></script>
 </body>

@@ -18,7 +18,7 @@ function reset () {
     for(let player of [player01, player02]) {
         player.pontos = 0
         player.display.textContent = 0
-        player.display.classList.remove('green', 'red')
+        player.display.classList.remove('has-text-success', 'has-text-danger')
         player.button.disabled = false
     }
     isGameOver = false
@@ -37,8 +37,8 @@ function addPontos(player, opponent) {
     player.pontos += 1
     if(player.pontos === maxPontos) {
         isGameOver = true
-        player.display.classList.add('green')
-            opponent.display.classList.add('red')
+        player.display.classList.add('has-text-success')
+            opponent.display.classList.add('has-text-danger')
             disableBtn()
         }
         player.display.textContent = player.pontos
