@@ -36,8 +36,8 @@ Os usuários precisam:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- URL Solução: [GitHub](https://github.com/gjperes/frontend-projects/tree/master/order-summary-component-main)
+- URL Live Site: [GitHub Pages](https://gjperes.github.io/frontend-projects/order-summary-component-main/)
 
 ## O processo de desenvolvimento
 
