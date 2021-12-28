@@ -21,6 +21,7 @@ function reset () {
         player.display.classList.remove('green', 'red')
         player.button.disabled = false
     }
+    isGameOver = false
 }
 
 // Desativa os botões de incrementar pontuação
@@ -33,20 +34,20 @@ function disableBtn() {
 // Incrementa a pontuação
 function addPontos(player, opponent) {
     if(!isGameOver)
-        player.pontos += 1
-        if(player.pontos === maxPontos) {
-            isGameOver = true
-            player.display.classList.add('green')
+    player.pontos += 1
+    if(player.pontos === maxPontos) {
+        isGameOver = true
+        player.display.classList.add('green')
             opponent.display.classList.add('red')
             disableBtn()
         }
         player.display.textContent = player.pontos
-}
-
+    }
+    
 // Event Listener dos players
-player01.button.addEventListener("click", addPontos(player01, player02))
-player02.button.addEventListener("click", addPontos(player02, player01))
-
+player01.button.addEventListener("click", () => addPontos(player01, player02))
+player02.button.addEventListener("click", () => addPontos(player02, player01))
+    
 // Reinicia o placar
 document.querySelector('#restart').addEventListener("click", reset)
 
