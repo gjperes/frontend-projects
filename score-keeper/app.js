@@ -1,64 +1,54 @@
-const p1Display = document.querySelector("#p1Display")
-const p2Display = document.querySelector("#p2Display")
+const player01 = {
+    pontos: 0,
+    display: document.querySelector("#p1Display"),
+    button: document.querySelector("#p1Btn")
+}
 
-const p1Btn = document.querySelector("#p1Btn")
-const p2Btn = document.querySelector("#p2Btn")
-
-const restart = document.querySelector('#restart')
+const player02 = {
+    pontos: 0,
+    display: document.querySelector("#p2Display"),
+    button: document.querySelector("#p2Btn")
+}
 
 let maxPontos = parseInt(document.querySelector("#maxPontos").value)
-let p1Pontos = 0
-let p2Pontos = 0
 let isGameOver = false
 
 // Reseta todos os valores do jogo para os valores iniciais
 function reset () {
-    p1Display.textContent = 0
-    p2Display.textContent = 0
-    p1Display.classList.remove('green', 'red')
-    p2Display.classList.remove('green', 'red')
-    p1Pontos = 0
-    p2Pontos = 0
-    isGameOver = false
-
-    p1Btn.disabled = false
-    p2Btn.disabled = false
+    for(let player of [player01, player02]) {
+        player.pontos = 0
+        player.display.textContent = 0
+        player.display.classList.remove('green', 'red')
+        player.button.disabled = false
+    }
 }
 
 // Desativa os botões de incrementar pontuação
 function disableBtn() {
-    p1Btn.disabled = true
-    p2Btn.disabled = true
+    for(let player of [player01, player02]) {
+        player.button.disabled = true
+    }
 }
 
-// Incrementa pontos do player 01
-p1Btn.addEventListener("click", function () {
+// Incrementa a pontuação
+function addPontos(player, opponent) {
     if(!isGameOver)
-        p1Pontos++
-        if(p1Pontos === maxPontos) {
+        player.pontos += 1
+        if(player.pontos === maxPontos) {
             isGameOver = true
-            p1Display.classList.add('green')
-            p2Display.classList.add('red')
+            player.display.classList.add('green')
+            opponent.display.classList.add('red')
             disableBtn()
         }
-        p1Display.textContent = p1Pontos
-})
+        player.display.textContent = player.pontos
+}
 
-// Incrementa pontos do player 02
-p2Btn.addEventListener("click", function () {
-    if(!isGameOver)
-        p2Pontos++
-        if(p2Pontos === maxPontos) {
-            isGameOver = true
-            p2Display.classList.add('green')
-            p1Display.classList.add('red')
-            disableBtn()
-        }
-        p2Display.textContent = p2Pontos
-})
+// Event Listener dos players
+player01.button.addEventListener("click", addPontos(player01, player02))
+player02.button.addEventListener("click", addPontos(player02, player01))
 
 // Reinicia o placar
-restart.addEventListener("click", reset)
+document.querySelector('#restart').addEventListener("click", reset)
 
 // Redefine o máximo de pontos possível
 document.querySelector("#maxPontos").addEventListener("change", function() {
