@@ -1,58 +1,21 @@
-const player01 = {
-    pontos: 0,
-    display: document.querySelector("#p1Display"),
-    button: document.querySelector("#p1Btn")
-}
+// Main configuration file, setting Express configuration
 
-const player02 = {
-    pontos: 0,
-    display: document.querySelector("#p2Display"),
-    button: document.querySelector("#p2Btn")
-}
+const express = require('express')
+const app = express()
+const path = require('path')
 
-let maxPontos = parseInt(document.querySelector("#maxPontos").value)
-let isGameOver = false
+app.use(express.static(path.join(__dirname, 'public')))
 
-// Reseta todos os valores do jogo para os valores iniciais
-function reset () {
-    for(let player of [player01, player02]) {
-        player.pontos = 0
-        player.display.textContent = 0
-        player.display.classList.remove('has-text-success', 'has-text-danger')
-        player.button.disabled = false
-    }
-    isGameOver = false
-}
+app.set('view engine', 'ejs')
 
-// Desativa os botões de incrementar pontuação
-function disableBtn() {
-    for(let player of [player01, player02]) {
-        player.button.disabled = true
-    }
-}
+app.get('/', (req, res) => {
+    res.render('index')
+})
 
-// Incrementa a pontuação
-function addPontos(player, opponent) {
-    if(!isGameOver)
-    player.pontos += 1
-    if(player.pontos === maxPontos) {
-        isGameOver = true
-        player.display.classList.add('has-text-success')
-            opponent.display.classList.add('has-text-danger')
-            disableBtn()
-        }
-        player.display.textContent = player.pontos
-    }
-    
-// Event Listener dos players
-player01.button.addEventListener("click", () => addPontos(player01, player02))
-player02.button.addEventListener("click", () => addPontos(player02, player01))
-    
-// Reinicia o placar
-document.querySelector('#restart').addEventListener("click", reset)
+app.get('*', (req, res) => {
+    res.render('notfound')
+})
 
-// Redefine o máximo de pontos possível
-document.querySelector("#maxPontos").addEventListener("change", function() {
-    maxPontos = parseInt(document.querySelector("#maxPontos").value)
-    reset()
+app.listen(8080, function() {
+    console.log('Server listening...')
 })
