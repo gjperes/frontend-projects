@@ -1,0 +1,12 @@
+<%- include('head') %>
+
+    <h1>Comentários</h1>
+    <ul>
+    <% for(let comment of comments) { %>
+        <li><strong><%= comment.author %>:</strong> <%= comment.comment %></li>
+    <% } %>
+    </ul>
+
+</body>
+
+</html>

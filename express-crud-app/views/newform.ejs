@@ -1,0 +1,20 @@
+<%- include('head') %>
+
+    <h1>Novo comentário</h1>
+
+    <form action="/comments" method="POST">
+        <label for="author">
+            Nome
+            <input required type="text" name="author" id="author">
+        </label>
+        <br><br>
+        <textarea required name="comment" id="comment" cols="30" rows="10" placeholder="Seu comentário"></textarea>
+        <br><br>
+        <button type="submit">Criar</button>
+    </form>
+    
+    <a href="/comments">Voltar</a>
+
+</body>
+
+</html>
