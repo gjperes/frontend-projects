@@ -1,0 +1,15 @@
+<%- include('head.ejs') %>
+
+    <h1>Detalhes do comentário:</h1>
+    <h2>Autor: <%= selectedComment.author %></h2>
+    <p><strong>Mensagem:</strong> <%= selectedComment.comment %></p>
+    <p>ID: <%= selectedComment.id %></p>
+
+    <a href="/comments">Início</a>
+    <a href="/comments/<%= selectedComment.id %>/edit">Editar</a>
+    <form action="/comments/<%= selectedComment.id %>?_method=DELETE" method="POST">
+        <button type="submit">Deletar</button>
+    </form>
+
+</body>
+</html>

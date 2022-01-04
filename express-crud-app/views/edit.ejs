@@ -1,0 +1,14 @@
+<%- include('head') %>
+
+    <h1>Editando comentário ID: <%= selectedComment.id %></h1>
+
+    <form action="/comments/<%= selectedComment.id %>?_method=PATCH" method="POST">
+        <textarea required name="comment" id="comment" cols="30" rows="10"><%= selectedComment.comment %></textarea>
+        <button type="submit">Editar</button>
+    </form>
+    
+    <a href="/comments">Cancelar</a>
+
+</body>
+
+</html>

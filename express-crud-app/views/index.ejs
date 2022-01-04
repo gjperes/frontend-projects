@@ -3,9 +3,14 @@
     <h1>Comentários</h1>
     <ul>
     <% for(let comment of comments) { %>
-        <li><strong><%= comment.author %>:</strong> <%= comment.comment %></li>
+        <li>
+            <strong><%= comment.author %>:</strong>
+             <%= comment.comment %> <a href="/comments/<%= comment.id %>">Detalhes</a> 
+        </li>
     <% } %>
     </ul>
+
+    <a href="/comments/new">Novo comentário</a>
 
 </body>
 
