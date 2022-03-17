@@ -22,9 +22,9 @@ class RollDice extends Component {
     render() {
         return (
             <div>
-                <Dice value={this.state.diceOne} rolling={this.state.rolling}/>
-                <Dice value={this.state.diceTwo} rolling={this.state.rolling}/>
-                <button>Roll Dice!</button>
+                <Dice value={this.state.diceOne}/>
+                <Dice value={this.state.diceTwo}/>
+                <button onClick={this.roll}>Roll Dice!</button>
             </div>
         );
     }
