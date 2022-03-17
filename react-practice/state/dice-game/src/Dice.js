@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import './Dice.css';
 
 class Dice extends Component {
     render() {
         return (
-            <p>teste</p>
+            <div>
+                <i className="fa-solid fa-dice-one Dice-ico"/>
+            </div>
         );
     }
 }

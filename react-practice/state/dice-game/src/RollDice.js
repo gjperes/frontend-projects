@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import Dice from './Dice';
-import RollButton from './RollButton';
 
-class Menu extends Component {
+class RollDice extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,11 +10,13 @@ class Menu extends Component {
             rolling: false,
         }
 
-        this.rollDices = this.rollDices.bind(this);
+        this.roll = this.roll.bind(this);
     }
 
-    rollDices(e) {
-        this.setState({rolling: true});
+    roll(e) {
+        const rand = () => Math.floor(Math.random() * 6) + 1;
+
+        this.setState({diceOne: rand(), diceTwo: rand()})
     }
 
     render() {
@@ -23,10 +24,10 @@ class Menu extends Component {
             <div>
                 <Dice value={this.state.diceOne} rolling={this.state.rolling}/>
                 <Dice value={this.state.diceTwo} rolling={this.state.rolling}/>
-                <RollButton rolling={this.state.rolling} onClick={this.rollDices} />
+                <button>Roll Dice!</button>
             </div>
         );
     }
 }
 
-export default Menu;
+export default RollDice;
