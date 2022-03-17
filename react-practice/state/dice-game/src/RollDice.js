@@ -24,8 +24,10 @@ class RollDice extends Component {
     render() {
         return (
             <div className="RollDice">
-                <Dice value={this.state.diceOne}/>
-                <Dice value={this.state.diceTwo}/>
+                <div className="RollDice-dices">
+                    <Dice value={this.state.diceOne}/>
+                    <Dice value={this.state.diceTwo}/>
+                </div>
 
                 <button
                     onClick={this.roll}

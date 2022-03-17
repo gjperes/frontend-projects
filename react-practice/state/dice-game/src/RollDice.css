@@ -1,3 +1,14 @@
+.RollDice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.RollDice-dices {
+    display: flex;
+}
+
 .RollDice button {
     background-color: black;
     font-size: 12px;
