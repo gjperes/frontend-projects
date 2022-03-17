@@ -6,8 +6,8 @@ class RollDice extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            diceOne: Math.floor(Math.random() * 6) + 1,
-            diceTwo: Math.floor(Math.random() * 6) + 1,
+            diceOne: Math.floor(Math.random() * 6),
+            diceTwo: Math.floor(Math.random() * 6),
             rolling: false,
         }
 
@@ -15,7 +15,7 @@ class RollDice extends Component {
     }
 
     roll() {
-        const rand = () => Math.floor(Math.random() * 6) + 1;
+        const rand = () => Math.floor(Math.random() * 6);
 
         this.setState({diceOne: rand(), diceTwo: rand(), rolling: true});
         setTimeout(() => this.setState({rolling: false}), 1000);
