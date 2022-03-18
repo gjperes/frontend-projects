@@ -8,7 +8,7 @@ class Dice extends Component {
         return (
             <div className="Dice">
                 <i className={`fa-solid fa-dice-${numberText[this.props.value]}
-                              ${this.props.rolling ? 'Dice-rolling' : ''}`} />
+                              ${this.props.rolling && 'Dice-rolling'}`} />
             </div>
         );
     }
