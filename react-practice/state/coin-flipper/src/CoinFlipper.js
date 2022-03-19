@@ -1,11 +1,12 @@
 import React, {Component} from "react";
 import Coin from "./Coin";
+import "./CoinFlipper.css";
 
 class CoinFlipper extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            side: "",
+            side: "head",
             countFlips: {
                 total: 0,
                 head: 0,
@@ -32,7 +33,7 @@ class CoinFlipper extends Component {
 
     render() {
         return (
-            <div>
+            <div className={"CoinFlipper"}>
                 <h1>Let's flip a coin!</h1>
                 <Coin side={this.state.side}/>
                 <p>

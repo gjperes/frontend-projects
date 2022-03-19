@@ -1,0 +1,11 @@
+.CoinFlipper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.CoinFlipper img {
+    height: 135px;
+    width: 300px;
+}
