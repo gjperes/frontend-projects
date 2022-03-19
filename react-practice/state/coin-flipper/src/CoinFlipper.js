@@ -23,12 +23,21 @@ class CoinFlipper extends Component {
     handleClick() {
         const result = this.generateRand();
         const sideNames = ["head", "tail"];
-        const countFlips = this.state.countFlips;
 
-        countFlips.total++;
-        result === 0 ? countFlips.head++ : countFlips.tail++;
+        this.setState(st => {
+            const newCountFlips = {...this.state.countFlips};
 
-        this.setState({side: sideNames[result]});
+            newCountFlips.total = st.countFlips.total + 1;
+
+            result === 0 ?
+                (newCountFlips.head = st.countFlips.head + 1) :
+                (newCountFlips.tail = st.countFlips.tail + 1);
+
+            return {
+                side: sideNames[result],
+                countFlips: newCountFlips
+            }
+        });
     }
 
     render() {
